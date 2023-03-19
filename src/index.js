@@ -5,10 +5,10 @@ import App from './App';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Blogs from "./pages/Blogs";
-import Contact from "./pages/Contact";
+import TopPage from "./pages/TopPage";
+import Column from "./pages/Column";
 import NoPage from "./pages/NoPage";
+import MyRecord from "./pages/MyRecord"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,9 +16,9 @@ root.render(
   <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
+          <Route index element={<TopPage />} />
+          <Route path="column" element={<Column />} />
+          <Route path="myrecord" element={<MyRecord />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
