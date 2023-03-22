@@ -5,43 +5,23 @@ import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import List from '@mui/material/List';
+import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom';
+import logo from '../../resources/logo.svg';
 
 
 const drawerWidth = 240;
-
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginRight: -drawerWidth,
-    ...(open && {
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginRight: 0,
-    }),
-  }),
-);
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -66,12 +46,13 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
-  justifyContent: 'flex-start',
+  justifyContent: 'flex-end',
 }));
 
 export default function NavBar() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -80,25 +61,49 @@ export default function NavBar() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const toRecordOfYourself = () => navigate('/myrecord')
+  const toColumnList = () => navigate('column')
+  const toHome = () => navigate('/')
   return (
     <Box sx={{ bgcolor: '#414141'}}>
-      <Container maxWidth="xl">
-        <Box sx={{ display: 'flex', bgcolor: '#414141' }}>
-        <CssBaseline />
-          <AppBar position="static" open={open}>
-            <Toolbar>
-              <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
-                Persistent drawer
-              </Typography>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="end"
-                onClick={handleDrawerOpen}
-                sx={{ ...(open && { display: 'none' }) }}
-              >
-                <MenuIcon />
-              </IconButton>
+      <Container maxWidth="lg">
+        <Box sx={{ display: 'flex'}}>
+          <CssBaseline />
+          <AppBar sx={{ boxShadow: 0}} position="static" open={open}>
+            <Toolbar sx={{ bgcolor: '#414141'}}>
+              <Box sx={{ flexGrow: 2 }}>
+                <MenuItem key="record-of-yourself" onClick={toHome}>
+                  <img src={logo} alt="logo" width="144" height="64" />  
+                </MenuItem>
+              </Box>
+              <Box sx={{ 
+                  display: 'flex', 
+                  alignItems: 'center',
+                  justifyContent: 'space-between', 
+                  bgcolor: '#777777',
+                  flexGrow: 1
+                }}>
+                <MenuItem key="record-of-yourself" onClick={toRecordOfYourself}>
+                  <Typography textAlign="center">自分の記録</Typography>
+                </MenuItem>
+                <MenuItem key="challenge">
+                  <Typography textAlign="center">チャレンジ</Typography>
+                </MenuItem>
+                <MenuItem key="notification">
+                  <Typography textAlign="center">お知らせ</Typography>
+                </MenuItem>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="end"
+                  onClick={handleDrawerOpen}
+                  sx={{ ...(open && { display: 'none' }) }}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Box>
+              
             </Toolbar>
           </AppBar>
           <Drawer
@@ -113,36 +118,43 @@ export default function NavBar() {
             anchor="right"
             open={open}
           >
-            <DrawerHeader>
+            <DrawerHeader sx={{bgcolor: '#777777'}}>
               <IconButton onClick={handleDrawerClose}>
                 <ChevronRightIcon />
               </IconButton>
             </DrawerHeader>
-            <Divider />
-            <List>
-              {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-            </List>
-            <Divider />
-            <List>
-              {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
+            <List sx={{bgcolor: '#777777'}}>
+              <ListItem key="record-of-yourself" disablePadding>
+                <ListItemButton>
+                  <ListItemText primary="自分の記録" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem key="weight-chart" disablePadding>
+                <ListItemButton>
+                  <ListItemText primary="体重グラフ" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem key="target" disablePadding>
+                <ListItemButton>
+                  <ListItemText primary="目標" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem key="selecting-corses" disablePadding>
+                <ListItemButton>
+                  <ListItemText primary="選択中のコース" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem key="column-list" disablePadding>
+                <ListItemButton onClick={toColumnList}>
+                  <ListItemText primary="コラム一覧" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem key="setting" disablePadding>
+                <ListItemButton>
+                  <ListItemText primary="設定" />
+                </ListItemButton>
+              </ListItem>
+              
             </List>
           </Drawer>
         </Box>
