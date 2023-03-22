@@ -19,6 +19,9 @@ import List from '@mui/material/List';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../resources/logo.svg';
+import icon_challenge from '../../resources/icon_challenge.svg';
+import icon_info from '../../resources/icon_info.svg';
+import icon_memo from '../../resources/icon_memo.svg';
 
 
 const drawerWidth = 240;
@@ -81,16 +84,19 @@ export default function NavBar() {
                   display: 'flex', 
                   alignItems: 'center',
                   justifyContent: 'space-between', 
-                  bgcolor: '#777777',
+                  // bgcolor: '#777777',
                   flexGrow: 1
                 }}>
                 <MenuItem key="record-of-yourself" onClick={toRecordOfYourself}>
+                  <img src={icon_memo} alt="logo" width="32" height="32" />
                   <Typography textAlign="center">自分の記録</Typography>
                 </MenuItem>
                 <MenuItem key="challenge">
+                  <img src={icon_challenge} alt="logo" width="32" height="32" />
                   <Typography textAlign="center">チャレンジ</Typography>
                 </MenuItem>
                 <MenuItem key="notification">
+                  <img src={icon_info} alt="logo" width="32" height="32" />
                   <Typography textAlign="center">お知らせ</Typography>
                 </MenuItem>
                 <IconButton
