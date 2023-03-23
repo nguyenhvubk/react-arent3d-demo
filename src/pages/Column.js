@@ -1,5 +1,5 @@
-import DateRate from "../components/toppage/DateRate";
-import Chart from "../components/toppage/Chart";
+import MainPhoto from "../components/toppage/MainPhoto";
+import Graph from "../components/toppage/Graph";
 import Filters from "../components/toppage/Filters";
 import Records from "../components/toppage/Records";
 import Grid from '@mui/material/Grid';

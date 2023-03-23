@@ -1,12 +1,14 @@
-import DateRate from "../components/toppage/DateRate";
-import Chart from "../components/toppage/Chart";
+import MainPhoto from "../components/toppage/MainPhoto";
+import Graph from "../components/toppage/Graph";
 import Filters from "../components/toppage/Filters";
 import Records from "../components/toppage/Records";
+import LoadMoreButton from "../components/common/LoadMoreButton";
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
+
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -22,12 +24,16 @@ const TopPage = () => {
   return (
     <div>
       <Grid container spacing={0}>
-        <Grid item xs={3}>
-          {/* <Item>xs=3</Item> */}
-          <Box sx={{ bgcolor: '#cfe8fc', height: '50vh' }} />
+        <Grid item xs={4}>
+          <Box sx={{ bgcolor: '#cfe8fc', height: '312px' }} >
+            <MainPhoto />
+          </Box>
         </Grid>
-        <Grid item xs={9}>
-          <Box sx={{ bgcolor: '#cfe8fc', height: '50vh' }} />
+        <Grid item xs={8}>
+          <Box sx={{ bgcolor: '#2E2E2E', height: '312px' }}>
+            <Graph />
+          </Box>
+
         </Grid>
         {/* <Grid item xs={4}>
           <Item>xs=4</Item>
@@ -36,14 +42,14 @@ const TopPage = () => {
           <Item>xs=8</Item>
         </Grid> */}
       </Grid>
-      <Container maxWidth="lg">
-        <Box sx={{ bgcolor: '#cfe8fc', height: '30vh' }} />
+      <Container maxWidth="md">
+        <Filters />
       </Container>
       <Container maxWidth="lg">
         <Box sx={{ bgcolor: '#cfd8fc', height: '60vh' }} />
       </Container>
       <Container maxWidth="xs">
-        <Box sx={{ bgcolor: '#cfdefc', height: '15vh' }} />
+        <LoadMoreButton text="記録をもっと見る" />
       </Container>
     </div>
   )
