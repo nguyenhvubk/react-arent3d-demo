@@ -18,10 +18,12 @@ import ListItemText from '@mui/material/ListItemText';
 import List from '@mui/material/List';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../resources/logo.svg';
-import icon_challenge from '../../resources/icon_challenge.svg';
-import icon_info from '../../resources/icon_info.svg';
-import icon_memo from '../../resources/icon_memo.svg';
+import logo from '../../asset/logo.svg';
+import icon_challenge from '../../asset/icon_challenge.svg';
+import icon_info from '../../asset/icon_info.svg';
+import icon_memo from '../../asset/icon_memo.svg';
+import icon_close from '../../asset/icon_close.svg';
+import icon_menu from '../../asset/icon_menu.svg';
 
 
 const drawerWidth = 240;
@@ -88,15 +90,15 @@ export default function NavBar() {
                   flexGrow: 1
                 }}>
                 <MenuItem key="record-of-yourself" onClick={toRecordOfYourself}>
-                  <img src={icon_memo} alt="logo" width="32" height="32" />
+                  <img src={icon_memo} alt="memo" width="32" height="32" />
                   <Typography textAlign="center">自分の記録</Typography>
                 </MenuItem>
                 <MenuItem key="challenge">
-                  <img src={icon_challenge} alt="logo" width="32" height="32" />
+                  <img src={icon_challenge} alt="challenge" width="32" height="32" />
                   <Typography textAlign="center">チャレンジ</Typography>
                 </MenuItem>
                 <MenuItem key="notification">
-                  <img src={icon_info} alt="logo" width="32" height="32" />
+                  <img src={icon_info} alt="info" width="32" height="32" />
                   <Typography textAlign="center">お知らせ</Typography>
                 </MenuItem>
                 <IconButton
@@ -106,7 +108,8 @@ export default function NavBar() {
                   onClick={handleDrawerOpen}
                   sx={{ ...(open && { display: 'none' }) }}
                 >
-                  <MenuIcon />
+                  <img src={icon_menu} alt="menu" width="32" height="32" />
+                  {/* <MenuIcon /> */}
                 </IconButton>
               </Box>
               
@@ -126,7 +129,7 @@ export default function NavBar() {
           >
             <DrawerHeader sx={{bgcolor: '#777777'}}>
               <IconButton onClick={handleDrawerClose}>
-                <ChevronRightIcon />
+                <img src={icon_close} alt="logo" width="32" height="32" />
               </IconButton>
             </DrawerHeader>
             <List sx={{bgcolor: '#777777'}}>
