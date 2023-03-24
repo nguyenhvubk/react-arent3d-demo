@@ -1,7 +1,6 @@
 import MainPhoto from "../components/toppage/MainPhoto";
 import Graph from "../components/toppage/Graph";
 import Filters from "../components/toppage/Filters";
-import Records from "../components/toppage/Records";
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
