@@ -28,7 +28,6 @@ const LoadMoreButton = (props) => {
       justifyContent: 'center', 
       }}>
       <Button style={styles.buttonImage}>
-        {/* <img src={loadmorebutton} alt="filter_button1" width="296px" height="56px" /> */}
         <Typography textAlign="center" style={styles.text}>{props.text}</Typography>
       </Button>
     </Box>

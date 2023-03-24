@@ -21,6 +21,7 @@ const MealHistory = (props) => {
       // bgcolor: '#777777',
       display: 'flex',
       alignItems: 'flex-end',
+      m: '4px'
       }} style={{
         backgroundImage: `url(${props.img})`,
         backgroundRepeat: 'no-repeat',
