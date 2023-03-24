@@ -81,7 +81,7 @@ const TopPage = () => {
       {mealHirotyData.map((day) => (
         <Container maxWidth='lg' sx={{display: 'flex', justifyContent: 'center'}}>
           {day.map((meal) => (
-          <MealHistory img={`${meal.img}`} time={meal.time} />
+          <MealHistory img={`${meal.img}`} time={meal.date} />
           ))}
         </Container>
       ))}

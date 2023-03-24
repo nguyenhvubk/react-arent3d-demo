@@ -8,6 +8,14 @@ const styles = {
     width: '296px',
     height: "56px",
     backgroundImage: `url(${loadmorebutton})`
+  },
+  text: {
+    fontFamily: 'Hiragino Kaku Gothic Pro',
+    fontStyle: 'normal',
+    fontWeight: '300',
+    fontSize: '18px',
+    lineHeight: '26px',
+    color: '#FFFFFF',
   }
 };
 
@@ -21,7 +29,7 @@ const LoadMoreButton = (props) => {
       }}>
       <Button style={styles.buttonImage}>
         {/* <img src={loadmorebutton} alt="filter_button1" width="296px" height="56px" /> */}
-        <Typography textAlign="center">{props.text}</Typography>
+        <Typography textAlign="center" style={styles.text}>{props.text}</Typography>
       </Button>
     </Box>
     
