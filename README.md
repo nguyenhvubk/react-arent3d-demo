@@ -1,16 +1,12 @@
 ## README
 A demo react web app for recruiting activity  
 
----
-
 ## System Environment
 | Build tools      | Version |
 | ----------- | ----------- |
 | Nodejs      | 16.13.1       |
 | npm   | 6.14.15        |
 | React | ^18.2.0 |
-
----
 
 ## Build
 
