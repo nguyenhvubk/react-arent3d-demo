@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { Container } from '@mui/system';
 import Link from '@mui/material/Link';
-import '../../style/Footer.css';
+import '../../style/style.css';
 
 const Footer = () => {
   return (

@@ -16,13 +16,12 @@ const styles = {
 const MealHistory = (props) => {
   return (
     <Box sx={{ 
-      height: '234px',
-      width: '234px', 
-      // bgcolor: '#777777',
-      display: 'flex',
-      alignItems: 'flex-end',
-      m: '4px'
-      }} style={{
+        height: '234px',
+        width: '234px', 
+        // bgcolor: '#777777',
+        display: 'flex',
+        alignItems: 'flex-end',
+        m: '4px',
         backgroundImage: `url(${props.img})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',

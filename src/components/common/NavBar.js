@@ -4,6 +4,7 @@ import MuiAppBar from '@mui/material/AppBar';
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
+import Divider from '@mui/material/Divider';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
@@ -20,6 +21,7 @@ import icon_info from '../../asset/icon_info.svg';
 import icon_memo from '../../asset/icon_memo.svg';
 import icon_close from '../../asset/icon_close.svg';
 import icon_menu from '../../asset/icon_menu.svg';
+import '../../style/style.css';
 
 
 const drawerWidth = 240;
@@ -64,7 +66,10 @@ export default function NavBar() {
   };
 
   const toRecordOfYourself = () => navigate('/myrecord')
-  const toColumnList = () => navigate('column')
+  const toColumnList = () => {
+    navigate('column');
+    setOpen(false);
+  }
   const toHome = () => navigate('/')
   return (
     <Box sx={{ bgcolor: '#414141'}}>
@@ -87,15 +92,15 @@ export default function NavBar() {
                 }}>
                 <MenuItem key="record-of-yourself" onClick={toRecordOfYourself}>
                   <img src={icon_memo} alt="memo" width="32" height="32" />
-                  <Typography textAlign="center">自分の記録</Typography>
+                  <Typography textAlign="center" sx={{ ml: '10px' }}>自分の記録</Typography>
                 </MenuItem>
                 <MenuItem key="challenge">
                   <img src={icon_challenge} alt="challenge" width="32" height="32" />
-                  <Typography textAlign="center">チャレンジ</Typography>
+                  <Typography textAlign="center" sx={{ ml: '10px' }}>チャレンジ</Typography>
                 </MenuItem>
                 <MenuItem key="notification">
                   <img src={icon_info} alt="info" width="32" height="32" />
-                  <Typography textAlign="center">お知らせ</Typography>
+                  <Typography textAlign="center" sx={{ ml: '10px' }}>お知らせ</Typography>
                 </MenuItem>
                 <IconButton
                   color="inherit"
@@ -129,34 +134,40 @@ export default function NavBar() {
               </IconButton>
             </DrawerHeader>
             <List sx={{bgcolor: '#777777'}}>
+            <Divider />
               <ListItem key="record-of-yourself" disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="自分の記録" />
+                  <ListItemText primary="自分の記録" className='DrawerLink'/>
                 </ListItemButton>
               </ListItem>
+              <Divider />
               <ListItem key="weight-chart" disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="体重グラフ" />
+                  <ListItemText primary="体重グラフ" className='DrawerLink'/>
                 </ListItemButton>
               </ListItem>
+              <Divider />
               <ListItem key="target" disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="目標" />
+                  <ListItemText primary="目標" className='DrawerLink'/>
                 </ListItemButton>
               </ListItem>
+              <Divider />
               <ListItem key="selecting-corses" disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="選択中のコース" />
+                  <ListItemText primary="選択中のコース" className='DrawerLink'/>
                 </ListItemButton>
               </ListItem>
+              <Divider />
               <ListItem key="column-list" disablePadding>
                 <ListItemButton onClick={toColumnList}>
-                  <ListItemText primary="コラム一覧" />
+                  <ListItemText primary="コラム一覧" className='DrawerLink'/>
                 </ListItemButton>
               </ListItem>
+              <Divider />
               <ListItem key="setting" disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="設定" />
+                  <ListItemText primary="設定" className='DrawerLink'/>
                 </ListItemButton>
               </ListItem>
               
