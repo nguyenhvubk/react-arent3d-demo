@@ -8,12 +8,22 @@ import { Typography } from "@mui/material";
 import MyDairy from "../components/myrecord/MyDairy";
 
 
-const dairy = [
+const dairies = [
+  {
+    date: '2021.05.21',
+    time: '23:25',
+    text: '私の日記の記録が一部表示されます。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…私の日記の記録が一部表示されます。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…私の日記の記録が一部表示されます。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…',
+  }, 
   {
     date: '2021.05.21',
     time: '23:25',
     text: '私の日記の記録が一部表示されます。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…',
-  }, 
+  },
+  {
+    date: '2021.05.21',
+    time: '23:25',
+    text: '私の日記の記録が一部表示されます。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…',
+  },
   {
     date: '2021.05.21',
     time: '23:25',
@@ -57,8 +67,15 @@ const MyRecord = () => {
           <Box sx={{display: 'flex', justifyContent: 'flex-start'}}>
             <Typography>MY DAIRY</Typography> 
           </Box>
-          <Box sx={{ width: '960px',bgcolor: '#cfd8fc', height: '30vh' }}>
-            aaaa
+          <Box sx={{ 
+            width: '972px',
+            display: 'flex',
+            flexWrap: 'wrap'
+
+          }}>
+            {dairies.map((dairy) => (
+              <MyDairy date={dairy.date} time={dairy.time} text={dairy.text}/>
+            ))}
           </Box>
         </Box>
       </Container>
