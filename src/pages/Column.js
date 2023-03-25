@@ -1,4 +1,4 @@
-import RecommendButtons from '../components/toppage/RecommendButtons';
+import RecommendButtons from '../components/column/RecommendButtons';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import LoadMoreButton from "../components/common/LoadMoreButton";
