@@ -1,10 +1,5 @@
-import MainPhoto from "../components/toppage/MainPhoto";
-import Graph from "../components/toppage/Graph";
-import Filters from "../components/toppage/Filters";
-import Grid from '@mui/material/Grid';
-import { styled } from '@mui/material/styles';
+import RecommendButtons from '../components/toppage/RecommendButtons';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
 import LoadMoreButton from "../components/common/LoadMoreButton";
 import ColumnItem from "../components/column/ColumnItem";
@@ -99,8 +94,9 @@ const columnData = [
 const Column = () => {
   return (
     <div>
-      <Container maxWidth="lg">
-        <Box sx={{ bgcolor: '#cfe8fc', height: '30vh' }} />
+      
+      <Container maxWidth="lg" sx={{display: 'flex', justifyContent: 'center', mt: '56px', mb: '56px'}}>
+        <RecommendButtons />
       </Container>
       {columnData.map((column) => (
         <Container maxWidth='lg' sx={{display: 'flex', justifyContent: 'center'}}>

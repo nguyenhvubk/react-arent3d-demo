@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <Box sx={{ bgcolor: '#414141', height: '128px' }}>
       <Container sx={{
-        width: '1000px',
+        // width: '1280px',
         height: '128px',
         display: 'flex',
         alignItems: 'center',
