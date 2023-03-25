@@ -1,6 +1,5 @@
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import my_exercise from '../../asset/my_exercise.svg';
 
 const styles = {
   DairyDateTime: {

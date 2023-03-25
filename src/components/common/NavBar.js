@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import MuiAppBar from '@mui/material/AppBar';
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -63,7 +63,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function NavBar() {
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
 

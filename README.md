@@ -16,7 +16,7 @@ A demo react web app for recruiting activity
 
 In the project directory, you can run:
 
-`npm -i`  
+`npm i`  
 `npm start`
 
 Runs the app in the development mode.\
