@@ -64,15 +64,10 @@ const TopPage = () => {
     <div>
       <Grid container spacing={0}>
         <Grid item xs={4}>
-          <Box sx={{ bgcolor: '#cfe8fc', height: '312px' }} >
-            <MainPhoto />
-          </Box>
+          <MainPhoto />
         </Grid>
         <Grid item xs={8}>
-          <Box sx={{ bgcolor: '#2E2E2E', height: '312px' }}>
-            <Graph />
-          </Box>
-
+          <Graph />
         </Grid>
       </Grid>
       <Container maxWidth='md'>

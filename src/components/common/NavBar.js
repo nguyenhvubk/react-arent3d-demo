@@ -21,10 +21,20 @@ import icon_info from '../../asset/icon_info.svg';
 import icon_memo from '../../asset/icon_memo.svg';
 import icon_close from '../../asset/icon_close.svg';
 import icon_menu from '../../asset/icon_menu.svg';
-import '../../style/style.css';
 
 
 const drawerWidth = 240;
+
+const styles = {
+  DrawerLink: {
+    fontFamily: 'Hiragino Kaku Gothic Pro',
+    fontStyle: 'normal',
+    fontWeight: '300',
+    fontSize: '18px',
+    lineHeight: '26px',
+    color: '#FFFFFF',
+  }
+}
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -137,37 +147,37 @@ export default function NavBar() {
             <Divider />
               <ListItem key="record-of-yourself" disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="自分の記録" className='DrawerLink'/>
+                  <ListItemText primary="自分の記録" style={styles.DrawerLink}/>
                 </ListItemButton>
               </ListItem>
               <Divider />
               <ListItem key="weight-chart" disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="体重グラフ" className='DrawerLink'/>
+                  <ListItemText primary="体重グラフ" style={styles.DrawerLink}/>
                 </ListItemButton>
               </ListItem>
               <Divider />
               <ListItem key="target" disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="目標" className='DrawerLink'/>
+                  <ListItemText primary="目標" style={styles.DrawerLink}/>
                 </ListItemButton>
               </ListItem>
               <Divider />
               <ListItem key="selecting-corses" disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="選択中のコース" className='DrawerLink'/>
+                  <ListItemText primary="選択中のコース" style={styles.DrawerLink}/>
                 </ListItemButton>
               </ListItem>
               <Divider />
               <ListItem key="column-list" disablePadding>
                 <ListItemButton onClick={toColumnList}>
-                  <ListItemText primary="コラム一覧" className='DrawerLink'/>
+                  <ListItemText primary="コラム一覧" style={styles.DrawerLink}/>
                 </ListItemButton>
               </ListItem>
               <Divider />
               <ListItem key="setting" disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="設定" className='DrawerLink'/>
+                  <ListItemText primary="設定" style={styles.DrawerLink}/>
                 </ListItemButton>
               </ListItem>
               
